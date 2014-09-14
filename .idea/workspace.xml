@@ -23,61 +23,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Router.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Router.php">
+      <file leaf-file-name="IController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="-22.884615" vertical-offset="204" max-vertical-offset="1275">
+            <state line="7" column="25" selection-start="111" selection-end="111" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="272">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/code/local/modules/News/Controller/NewsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="33" selection-start="285" selection-end="285" vertical-scroll-proportion="0.17056856" vertical-offset="0" max-vertical-offset="897">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/IndexController.php">
+        <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="306">
+            <state line="12" column="1" selection-start="247" selection-end="247" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/news/controllers/NewsController.php">
+      <file leaf-file-name="Dad.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Dad.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="289">
-              <folding>
-                <element signature="e#6#84#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/IController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="57" selection-start="262" selection-end="262" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323">
+            <state line="20" column="1" selection-start="323" selection-end="323" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="442">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IModel.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/IModel.php">
+      <file leaf-file-name="IModel.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="35" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.7170036" vertical-offset="145" max-vertical-offset="1003">
+            <state line="61" column="34" selection-start="2238" selection-end="2238" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="731">
               <folding>
-                <marker date="1410206987801" expanded="true" signature="514:811" placeholder="CREATE TABLE..News..." />
-                <marker date="1410206987801" expanded="true" signature="870:1382" placeholder="CREATE TABLE..Comment..." />
-                <marker date="1410206987801" expanded="true" signature="1441:1701" placeholder="CREATE TABLE..User..." />
+                <element signature="n#dbCreation#0;n#Sohan_Core_IModel#0;n#!!top" expanded="false" />
+                <marker date="1410719337932" expanded="true" signature="732:1029" placeholder="CREATE TABLE..News..." />
+                <marker date="1410719337932" expanded="true" signature="1088:1600" placeholder="CREATE TABLE..Comment..." />
+                <marker date="1410719337932" expanded="true" signature="1659:1919" placeholder="CREATE TABLE..User..." />
+                <marker date="1410719337932" expanded="true" signature="2301:2321" placeholder="SELECT * FRO..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="NewsModel.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/news/models/NewsModel.php">
+        <entry file="file://$PROJECT_DIR$/app/code/local/modules/News/Model/NewsModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="255">
+            <state line="7" column="6" selection-start="92" selection-end="92" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="255">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/App.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="5" selection-start="336" selection-end="336" vertical-scroll-proportion="-10.461538" vertical-offset="51" max-vertical-offset="1207">
               <folding />
             </state>
           </provider>
@@ -95,23 +104,39 @@
       <list>
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/modules/news/controllers/newscontroller.php" />
+        <option value="$PROJECT_DIR$/modules/news/models/IModel.php" />
+        <option value="$PROJECT_DIR$/config/config.php" />
+        <option value="$PROJECT_DIR$/_installDB/01-create-database.sql" />
+        <option value="$PROJECT_DIR$/_installDB/02-create-table-song.sql" />
+        <option value="$PROJECT_DIR$/app/IController.php" />
         <option value="$PROJECT_DIR$/app/IndexController.php" />
         <option value="$PROJECT_DIR$/app/Router.php" />
-        <option value="$PROJECT_DIR$/modules/news/controllers/NewsController.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/modules/news/models/IModel.php" />
+        <option value="$PROJECT_DIR$/app/App.php" />
+        <option value="$PROJECT_DIR$/_installDB/03-insert-demo-data-into-table-song.sql" />
         <option value="$PROJECT_DIR$/modules/news/models/NewsModel.php" />
-        <option value="$PROJECT_DIR$/app/IController.php" />
+        <option value="$PROJECT_DIR$/modules/news/controllers/NewsController.php" />
+        <option value="$PROJECT_DIR$/modules/news/views/list.php" />
         <option value="$PROJECT_DIR$/app/IModel.php" />
+        <option value="$PROJECT_DIR$/code/app/App.php" />
+        <option value="$PROJECT_DIR$/app/code/llocal/modules/news/controllers/NewsController.php" />
+        <option value="$PROJECT_DIR$/app/autoload.php" />
+        <option value="$PROJECT_DIR$/app/code/core/Sohan/Core/IController.php" />
+        <option value="$PROJECT_DIR$/app/code/local/modules/News/Model/NewsModel.php" />
+        <option value="$PROJECT_DIR$/app/code/core/Sohan/Core/IndexController.php" />
+        <option value="$PROJECT_DIR$/app/Dad.php" />
+        <option value="$PROJECT_DIR$/app/code/core/Sohan/Core/App.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/app/code/core/Sohan/Core/IModel.php" />
+        <option value="$PROJECT_DIR$/app/code/local/modules/News/Controller/NewsController.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1288" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -167,82 +192,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test-mvc.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -261,6 +210,164 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test-mvc.local" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sohan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -268,12 +375,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../magento-ce.local" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\test-mvc.local\_installDB" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\test-mvc.local\app" />
-      <recent name="D:\xampp\htdocs\test-mvc.local\" />
+      <recent name="D:\xampp\htdocs\test-mvc.local\app\code\core\Sohan\Core" />
+      <recent name="D:\xampp\htdocs\test-mvc.local\app\code\core\Sohan" />
+      <recent name="D:\xampp\htdocs\test-mvc.local\app\code\Core" />
+      <recent name="D:\xampp\htdocs\test-mvc.local\app\code\llocal" />
     </key>
   </component>
   <component name="RunManager">
@@ -302,21 +415,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1288" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982087" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.184375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1703125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -339,85 +452,175 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="20" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/modules/News/Controller/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/local/modules/News/View/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="34" selection-start="2269" selection-end="2269" vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="731">
+          <folding>
+            <element signature="n#dbCreation#0;n#Sohan_Core_IModel#0;n#!!top" expanded="false" />
+            <marker date="1410719337932" expanded="true" signature="732:1029" placeholder="CREATE TABLE..News..." />
+            <marker date="1410719337932" expanded="true" signature="1088:1600" placeholder="CREATE TABLE..Comment..." />
+            <marker date="1410719337932" expanded="true" signature="1659:1919" placeholder="CREATE TABLE..User..." />
+            <marker date="1410719337932" expanded="true" signature="2301:2321" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_installDB/02-create-table-news.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="71" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1292">
+          <folding>
+            <element signature="n#dbCreation#0;n#Sohan_Core_IModel#0;n#!!top" expanded="false" />
+            <marker date="1410719337932" expanded="true" signature="732:1029" placeholder="CREATE TABLE..News..." />
+            <marker date="1410719337932" expanded="true" signature="1088:1600" placeholder="CREATE TABLE..Comment..." />
+            <marker date="1410719337932" expanded="true" signature="1659:1919" placeholder="CREATE TABLE..User..." />
+            <marker date="1410719337932" expanded="true" signature="2301:2321" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_installDB/03-insert-demo-data-into-table-song.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="10" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="170" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="54" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="153">
+        <state line="3" column="54" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_installDB/01-create-database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="42" selection-end="42" vertical-scroll-proportion="-0.68" vertical-offset="0" max-vertical-offset="119" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_installDB/02-create-table-news.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="300" selection-end="300" vertical-scroll-proportion="0.61676645" vertical-offset="16" max-vertical-offset="221" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_installDB/03-insert-demo-data-into-table-song.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="31" selection-start="174" selection-end="174" vertical-scroll-proportion="0.056792874" vertical-offset="0" max-vertical-offset="898" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="23" selection-start="168" selection-end="168" vertical-scroll-proportion="0.17056856" vertical-offset="0" max-vertical-offset="897">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="25" selection-start="111" selection-end="111" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="1" selection-start="247" selection-end="247" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="28" selection-start="726" selection-end="726" vertical-scroll-proportion="0.56856185" vertical-offset="0" max-vertical-offset="897">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="35" selection-start="89" selection-end="89" vertical-scroll-proportion="0.05882353" vertical-offset="0" max-vertical-offset="867">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="85" selection-end="85" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="306">
+        <state line="3" column="23" selection-start="77" selection-end="77" vertical-scroll-proportion="0.055254605" vertical-offset="0" max-vertical-offset="923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="405" selection-end="405" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="510">
+        <state line="4" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="204">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Router.php">
+    <entry file="file://$PROJECT_DIR$/app/Dad.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="28" selection-start="1320" selection-end="1320" vertical-scroll-proportion="-22.884615" vertical-offset="204" max-vertical-offset="1275">
+        <state line="20" column="1" selection-start="323" selection-end="323" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="442">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/news/models/NewsModel.php">
+    <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/App.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="143" selection-end="143" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="255">
+        <state line="24" column="5" selection-start="336" selection-end="336" vertical-scroll-proportion="-10.461538" vertical-offset="51" max-vertical-offset="1207">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/news/controllers/NewsController.php">
+    <entry file="file://$PROJECT_DIR$/app/code/core/Sohan/Core/IModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="289">
+        <state line="61" column="34" selection-start="2238" selection-end="2238" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="731">
           <folding>
-            <element signature="e#6#84#0" expanded="true" />
+            <element signature="n#dbCreation#0;n#Sohan_Core_IModel#0;n#!!top" expanded="false" />
+            <marker date="1410719337932" expanded="true" signature="732:1029" placeholder="CREATE TABLE..News..." />
+            <marker date="1410719337932" expanded="true" signature="1088:1600" placeholder="CREATE TABLE..Comment..." />
+            <marker date="1410719337932" expanded="true" signature="1659:1919" placeholder="CREATE TABLE..User..." />
+            <marker date="1410719337932" expanded="true" signature="2301:2321" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/IController.php">
+    <entry file="file://$PROJECT_DIR$/app/code/local/modules/News/Model/NewsModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="57" selection-start="262" selection-end="262" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323">
+        <state line="7" column="6" selection-start="92" selection-end="92" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="255">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/news.db">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/code/local/modules/News/View/list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="829">
+        <state line="4" column="17" selection-start="117" selection-end="117" vertical-scroll-proportion="0.07580825" vertical-offset="0" max-vertical-offset="897">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/IModel.php">
+    <entry file="file://$PROJECT_DIR$/app/code/local/modules/News/Controller/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="35" selection-start="1739" selection-end="1739" vertical-scroll-proportion="0.7170036" vertical-offset="145" max-vertical-offset="1003">
-          <folding>
-            <marker date="1410206987801" expanded="true" signature="514:811" placeholder="CREATE TABLE..News..." />
-            <marker date="1410206987801" expanded="true" signature="870:1382" placeholder="CREATE TABLE..Comment..." />
-            <marker date="1410206987801" expanded="true" signature="1441:1701" placeholder="CREATE TABLE..User..." />
-          </folding>
+        <state line="14" column="33" selection-start="285" selection-end="285" vertical-scroll-proportion="0.17056856" vertical-offset="0" max-vertical-offset="897">
+          <folding />
         </state>
       </provider>
     </entry>
