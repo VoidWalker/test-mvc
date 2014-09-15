@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sasha
- * Date: 08.09.14
- * Time: 22:28
- */
-abstract class Sohan_Core_IModel {
 
+abstract class Sohan_Core_Model_IModel
+{
     const DB_NAME = 'data/news.db';
     private $_db;
 
-    function __construct(){
-
+    function __construct()
+    {
         $this->openDatabaseConnection();
     }
 
@@ -19,11 +14,12 @@ abstract class Sohan_Core_IModel {
     {
         $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
 
-        $this->_db = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS, $options);
+        $this->_db = new PDO($GLOBALS['ini']['DB_TYPE'] . ':host=' . $GLOBALS['ini']['DB_HOST'] . ';dbname=' . $GLOBALS['ini']['DB_NAME'], $GLOBALS['ini']['DB_USER'], $GLOBALS['ini']['DB_PASS'], $options);
     }
 
-    private function dbCreation(){
-        try{
+    private function dbCreation()
+    {
+        try {
             $this->openDatabaseConnection();
             //Start transaction
             $this->_db->beginTransaction();
@@ -52,22 +48,19 @@ abstract class Sohan_Core_IModel {
             $this->_db->exec($sql);
             //End transaction
             $this->_db->commit();
-        }catch (PDOException $e){
-            echo $e->getCode().":".$e->getMessage();
+        } catch (PDOException $e) {
+            echo $e->getCode() . ":" . $e->getMessage();
             $this->_db->rollBack();
             echo "Cannot create DB.<br>";
         }
     }
 
-    public function getTableByName($table){
+    public function getTableByName($table)
+    {
         $table = strip_tags($table);
         $sql = "SELECT * FROM $table";
         $result = $this->_db->query($sql);
 
-
         return $result->fetchAll();
-
     }
-
-
 }
