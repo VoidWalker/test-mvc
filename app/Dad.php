@@ -8,6 +8,8 @@ final class Dad
 
     private static $_singletone = array();
 
+    private static $_registry;
+
     private static $_app;
 
     public static function run()
@@ -23,8 +25,11 @@ final class Dad
         return self::$_singletone[$className];
     }
 
-    public static function getFactory()
+    public static function getRegistry()
     {
-
+        if (!(self::$_registry instanceof Sohan_Core_Model_Registry)) {
+            self::$_registry = new Sohan_Core_Model_Registry();
+        }
+        return self::$_registry;
     }
 }
