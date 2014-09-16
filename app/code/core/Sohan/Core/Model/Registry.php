@@ -6,19 +6,21 @@ class Sohan_Core_Model_Registry
 
     public function get($key)
     {
-        if (isset($this->_instances[$key])) {
-            throw  new Exception('Instance is already exists: ' . $key);
+        if (!isset($this->_instances[$key])) {
+            //throw  new Exception('Instance is not set: ' . $key);
+            return false;
         }
 
         return $this->_instances[$key];
     }
 
-    public function set($key, $value)
+    public function set($key)
     {
-        if (!isset($this->_instances[$key])) {
-            throw new Exception('Instance is not set: ' . $key);
+        /*
+        if (isset($this->_instances[$key])) {
+            throw new Exception('Instance is already exists: ' . $key);
         }
-
-        $this->_instances[$key] = $value;
+        */
+        $this->_instances[$key] = new $key();
     }
 }

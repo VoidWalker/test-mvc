@@ -9,7 +9,8 @@ class News_Controller_NewsController extends Sohan_Core_Model_IController
 
     public function getAction()
     {
-        $newsModel = Dad::getSingleton('News_Model_NewsModel');
+        $newsModel1 = Dad::getSingleton('News_Model_NewsModel');
+        $newsModel = Dad::getFactory('News_Model_NewsModel');
         //$newsModel = new News_Model_NewsModel();
         $news = $newsModel->getTableByName('news');
 

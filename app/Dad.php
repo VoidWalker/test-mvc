@@ -19,10 +19,16 @@ final class Dad
 
     public static function getSingleton($className)
     {
+        if (!(self::getRegistry()->get($className))) {
+            self::getRegistry()->set($className);
+        }
+        return self::getRegistry()->get($className);
+        /*
         if (!(self::$_singletone[$className] instanceof $className)) {
-            self::$_singletone[$className] = new $className;
+            self::$_singletone[$className] = new $className();
         }
         return self::$_singletone[$className];
+        */
     }
 
     public static function getRegistry()
@@ -31,5 +37,11 @@ final class Dad
             self::$_registry = new Sohan_Core_Model_Registry();
         }
         return self::$_registry;
+    }
+
+    public static function getFactory($className)
+    {
+        self::getRegistry()->set($className);
+        return self::getRegistry()->get($className);
     }
 }
