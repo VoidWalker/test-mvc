@@ -22,7 +22,7 @@ class Sohan_Core_Model_App
         //Get module
         $this->_module = !empty($parts[0]) ? ucfirst($parts[0]) : null;
         //Get controller
-        $this->_controller = !empty($parts[1]) ? $this->_module . '_Controller_' . ucfirst($parts[1]) . 'Controller' : 'Sohan_Core_IndexController';
+        $this->_controller = !empty($parts[1]) ? $this->_module . '_Controller_' . ucfirst($parts[1]) . 'Controller' : 'Sohan_Core_Model_IndexController';
         //Get action
         $this->_method = !empty($parts[2]) ? $parts[2] . 'Action' : 'indexAction';
         //Get parameters
@@ -46,7 +46,11 @@ class Sohan_Core_Model_App
             $this->_controller = new $this->_controller();
             if (method_exists($this->_controller, $this->_method)) {
                 $this->_controller->{$this->_method}();
+            } else {
+                throw new Exception('Method does not exist!');
             }
+        } else {
+            throw new Exception('Controller does not exist!');
         }
     }
 

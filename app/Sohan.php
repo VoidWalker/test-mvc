@@ -2,7 +2,7 @@
 
 require 'app/autoload.php';
 
-const BP = 'test-mvc.local';
+define('BP', getcwd());
 
 final class Sohan
 {
@@ -17,46 +17,35 @@ final class Sohan
 
     public static function getSingleton($className)
     {
-        if (!isset(self::$_registry[$className])) {
-            self::$_registry[$className] = new $className();
+        if (self::registry($className) === null) {
+            self::register($className, new $className());
         }
 
-        return self::$_registry[$className];
+        return self::registry($className);
     }
 
     public static function register($key, $value)
     {
-        if (isset(self::$_registry[$key])) {
-            throw new  Exception('This key is already set: ' . $key);
-        }
         self::$_registry[$key] = $value;
     }
 
     public static function registry($key)
     {
-        if (!isset(self::$_registry[$key])) {
-            throw new Exception('This key is not set: ' . $key);
-        }
-
         return self::$_registry[$key];
     }
 
     public static function unregister($key)
     {
-        if (!isset(self::$_registry[$key])) {
-            throw new Exception('This key is not set: ' . $key);
-        }
         unset(self::$_registry[$key]);
     }
 
     public static function getFactory($className)
     {
-        if (isset(self::$_registry[$className])) {
+        if (self::registry($className) === null) {
             self::unregister($className);
         }
         self::register($className, new $className());
 
-        return self::$_registry[$className];
+        return self::registry($className);
     }
-
 }

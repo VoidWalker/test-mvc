@@ -13,8 +13,8 @@ abstract class Sohan_Core_Model_IModel
     private function openDatabaseConnection()
     {
         $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
-
-        $this->_db = new PDO($GLOBALS['ini']['DB_TYPE'] . ':host=' . $GLOBALS['ini']['DB_HOST'] . ';dbname=' . $GLOBALS['ini']['DB_NAME'], $GLOBALS['ini']['DB_USER'], $GLOBALS['ini']['DB_PASS'], $options);
+        Sohan_Core_Model_Config::init();
+        $this->_db = new PDO(Sohan_Core_Model_Config::getConfig('DB/DB_TYPE') . ':host=' . Sohan_Core_Model_Config::getConfig('DB/DB_HOST') . ';dbname=' . Sohan_Core_Model_Config::getConfig('DB/DB_NAME'), Sohan_Core_Model_Config::getConfig('DB/DB_USER'), Sohan_Core_Model_Config::getConfig('DB/DB_PASS'), $options);
     }
 
     private function dbCreation()
