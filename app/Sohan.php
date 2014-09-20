@@ -3,6 +3,7 @@
 require 'app/autoload.php';
 
 define('BP', getcwd());
+define('DS', DIRECTORY_SEPARATOR);
 
 final class Sohan
 {

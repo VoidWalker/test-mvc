@@ -6,18 +6,17 @@ spl_autoload_extensions('.php');
 
 function classLoader($className)
 {
-    $codePull[] = join(DIRECTORY_SEPARATOR, array('app', 'code', 'core')) . DIRECTORY_SEPARATOR;
-    $codePull[] = join(DIRECTORY_SEPARATOR, array('app', 'code', 'local', 'modules')) . DIRECTORY_SEPARATOR;
-    //print_r($codePull);
-    //$paths = array('app\code\core\\', 'app\code\local\modules\\');
-    $classPath = strtolower(str_replace('_', DIRECTORY_SEPARATOR, $className)) . '.php';
+    $codePull[] = join(DS, array('app', 'code', 'local', 'modules')) . DS;
+    $codePull[] = join(DS, array('app', 'code', 'core')) . DS;
+    $codePull[] = 'lib' . DS;
+    $classPath = str_replace('_', DS, $className) . '.php';
     echo '</br>' . $classPath;
     foreach ($codePull as $path) {
-        $filepath = $path . $classPath;
-        if (file_exists($filepath)) {
-            echo '</br>Include: ' . $filepath;
-            include $filepath;
-            //break;
+        $filePath = $path . $classPath;
+        if (file_exists($filePath)) {
+            echo '</br>Include: ' . $filePath;
+            include_once $filePath;
+            break;
         }
     }
 }
