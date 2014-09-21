@@ -1,6 +1,6 @@
 <?php
 
-require 'app/autoload.php';
+require 'app' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 define('BP', getcwd());
 define('DS', DIRECTORY_SEPARATOR);

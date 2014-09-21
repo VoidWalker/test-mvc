@@ -33,7 +33,7 @@ class Sohan_Core_Model_App
         //Get action
         $this->_method = !empty($parts[2]) ? $parts[2] . 'Action' : 'indexAction';
         //Get parameters
-        if ($parts[3]) {
+        if (isset($parts[3])) {
             $keys = $values = array();
             for ($i = 3; $i < count($parts); $i++) {
                 if ($i % 2 == 0) {
@@ -43,7 +43,6 @@ class Sohan_Core_Model_App
                 }
             }
             $this->_parameters = array_combine($keys, $values);
-            print_r($this->_parameters);
         }
     }
 

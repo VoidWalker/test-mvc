@@ -6,7 +6,7 @@ class Sohan_Core_Model_Config
 
     public function __construct()
     {
-        $this->_configuration = parse_ini_file('config' . DS . 'config.ini', true);
+        $this->_configuration = parse_ini_file('app' . DS . 'config' . DS . 'config.ini', true);
     }
 
     public function getConfig($path)
