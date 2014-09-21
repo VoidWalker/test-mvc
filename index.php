@@ -4,6 +4,9 @@ echo "This is {$_SERVER['SCRIPT_NAME']}";
 require_once 'app' . DIRECTORY_SEPARATOR . 'Sohan.php';
 
 Sohan::run();
+
+//echo Sohan::getConfigByPath('DB/DB_HOST');
+
 //phpinfo();
 
 

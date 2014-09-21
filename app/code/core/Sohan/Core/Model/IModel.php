@@ -13,8 +13,11 @@ abstract class Sohan_Core_Model_IModel
     private function openDatabaseConnection()
     {
         $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
-        Sohan_Core_Model_Config::init();
-        $this->_db = new PDO(Sohan_Core_Model_Config::getConfig('DB/DB_TYPE') . ':host=' . Sohan_Core_Model_Config::getConfig('DB/DB_HOST') . ';dbname=' . Sohan_Core_Model_Config::getConfig('DB/DB_NAME'), Sohan_Core_Model_Config::getConfig('DB/DB_USER'), Sohan_Core_Model_Config::getConfig('DB/DB_PASS'), $options);
+        try{
+        $this->_db = new PDO(Sohan::getConfigByPath('DB/DB_TYPE') . ':host=' . Sohan::getConfigByPath('DB/DB_HOST') . ';dbname=' . Sohan::getConfigByPath('DB/DB_NAME'), Sohan::getConfigByPath('DB/DB_USER'), Sohan::getConfigByPath('DB/DB_PASS'), $options);
+        }catch (PDOException $e){
+            echo '<br>' . $e->getMessage();
+        }
     }
 
     private function dbCreation()
@@ -57,10 +60,14 @@ abstract class Sohan_Core_Model_IModel
 
     public function getTableByName($table)
     {
+        try{
         $table = strip_tags($table);
         $sql = "SELECT * FROM $table";
         $result = $this->_db->query($sql);
 
         return $result->fetchAll();
+        }catch (PDOException $e){
+            echo '<br>' . $e->getMessage();
+        }
     }
 }
