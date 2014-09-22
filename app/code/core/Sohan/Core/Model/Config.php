@@ -9,7 +9,7 @@ class Sohan_Core_Model_Config
         $this->_configuration = parse_ini_file('app' . DS . 'config' . DS . 'config.ini', true);
     }
 
-    public function getConfig($path)
+    public function getConfigByPath($path)
     {
         list($section, $parameter) = explode('/', $path);
         if (!isset($this->_configuration[$section][$parameter])) {

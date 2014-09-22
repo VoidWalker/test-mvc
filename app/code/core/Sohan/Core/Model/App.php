@@ -12,13 +12,9 @@ class Sohan_Core_Model_App
 
     private $_config;
 
-    public function __construct()
-    {
-        $this->_config = new Sohan_Core_Model_Config();
-    }
-
     public function init()
     {
+        $this->_config = new Sohan_Core_Model_Config();
         $this->splitURL();
         $this->route();
     }
@@ -75,7 +71,7 @@ class Sohan_Core_Model_App
         return $this->_parameters;
     }
 
-    public function getConfig()
+    public function config()
     {
         return $this->_config;
     }

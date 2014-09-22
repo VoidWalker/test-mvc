@@ -5,7 +5,7 @@ abstract class Sohan_Core_Model_IModel extends Object
     const DB_NAME = 'data/news.db';
     private $_db;
 
-    function __construct()
+    public function init()
     {
         $this->openDatabaseConnection();
     }
@@ -61,7 +61,7 @@ abstract class Sohan_Core_Model_IModel extends Object
     public function getTableByName()
     {
         try {
-            $table = strip_tags($this->_data['table_name']);
+            $table = strip_tags($this->getData('table_name'));
             $sql = "SELECT * FROM $table";
             $result = $this->_db->query($sql);
             return $result->fetchAll();

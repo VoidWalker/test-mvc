@@ -1,6 +1,6 @@
 <?php
 
-class Sohan_Core_Model_IndexController extends Sohan_Core_Model_IController
+class Sohan_Core_Controller_IndexController extends Sohan_Core_Controller_IController
 {
     public function indexAction()
     {

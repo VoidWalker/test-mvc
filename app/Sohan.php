@@ -1,9 +1,9 @@
 <?php
 
-require 'app' . DIRECTORY_SEPARATOR . 'autoload.php';
-
 define('BP', getcwd());
 define('DS', DIRECTORY_SEPARATOR);
+
+require 'app' . DS . 'autoload.php';
 
 final class Sohan
 {
@@ -16,8 +16,7 @@ final class Sohan
     public static function run()
     {
         self::$_app = new Sohan_Core_Model_App();
-        self::$_config = self::$_app->getConfig();
-        self::$_app->init();
+        self::app()->init();
     }
 
     public static function getSingleton($className)
@@ -54,8 +53,29 @@ final class Sohan
         return self::registry($className);
     }
 
+    public static function getModel($alias)
+    {
+        list($module, $modelName) = explode('/', $alias);
+        $className = ucfirst($module) . '_Model_' . ucfirst($modelName) . 'Model';
+
+        return new $className();
+    }
+
+    public static function getHelper()
+    {
+    }
+
+    public static function getController()
+    {
+    }
+
     public static function getConfigByPath($path)
     {
-        return self::$_config->getConfig($path);
+        return self::app()->config()->getConfigByPath($path);
+    }
+
+    public static function app()
+    {
+        return self::$_app;
     }
 }

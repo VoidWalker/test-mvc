@@ -1,6 +1,6 @@
 <?php
 
-class News_Controller_NewsController extends Sohan_Core_Model_IController
+class News_Controller_NewsController extends Sohan_Core_Controller_IController
 {
     public function indexAction()
     {
@@ -9,9 +9,13 @@ class News_Controller_NewsController extends Sohan_Core_Model_IController
 
     public function getAction()
     {
-        //$newsModel1 = Sohan::getFactory('News_Model_NewsModel');
-        $newsModel = Sohan::getFactory('News_Model_NewsModel');
+        //$newsModel = Sohan::getFactory('News_Model_NewsModel');
+        $newsModel = Sohan::getModel('news/news');
+        $newsModel->init();
         $newsModel->setTableName('news');
+        //$model = new News_Model_NewsModel(array('tst' => 'test1', 'test' => 'test2'));
+        //echo "<br>TEST: ".$model->getTest();
+        //exit;
         $news = $newsModel->getTableByName();
 
         require_once 'app/code/local/modules/News/View/list.php';
