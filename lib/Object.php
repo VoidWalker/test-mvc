@@ -2,21 +2,20 @@
 
 class Object
 {
-    protected  $_data = array();
+    protected $_data = array();
 
     public function __construct()
     {
-        if (func_num_args() == 0) {
-
-        } elseif (func_num_args() == 1) {
-            if (!is_array(func_get_arg(0))) {
+        $num_args = func_num_args();
+        $args = func_get_args();
+        print_r($args);
+        if ($num_args == 1) {
+            if (!is_array($args[0])) {
                 throw new Exception("Argument must be array or pair of strings.");
             }
-            $this->addData(func_get_arg(0));
-        } elseif (func_num_args() == 2) {
-            $this->setData(func_get_arg(0), func_get_arg(1));
-        } else {
-            throw new Exception("Wrong argument.");
+            $this->addData($args[0]);
+        } elseif ($num_args == 2) {
+            $this->setData($args[0], $args[1]);
         }
     }
 
@@ -51,8 +50,9 @@ class Object
     public function getData($key)
     {
         if (!isset($this->_data[$key])) {
-           return null;
+            return null;
         }
+
         return $this->_data[$key];
     }
 
@@ -68,8 +68,6 @@ class Object
 
     public function addData(array $data)
     {
-        foreach ($data as $key => $value) {
-            $this->setData($key, $value);
-        }
+        $this->_data = array_merge($this->_data, $data);
     }
 }

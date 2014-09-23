@@ -6,7 +6,7 @@ spl_autoload_extensions('.php');
 
 function classLoader($className)
 {
-    $codePull[] = join(DS, array('app', 'code', 'local', 'modules')) . DS;
+    $codePull[] = join(DS, array('app', 'code', 'local')) . DS;
     $codePull[] = join(DS, array('app', 'code', 'core')) . DS;
     $codePull[] = 'lib' . DS;
     $classPath = str_replace('_', DS, $className) . '.php';

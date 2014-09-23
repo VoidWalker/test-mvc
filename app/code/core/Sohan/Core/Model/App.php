@@ -2,6 +2,8 @@
 
 class Sohan_Core_Model_App
 {
+    private $_namespace = null;
+
     private $_module = null;
 
     private $_controller = null;
@@ -21,17 +23,24 @@ class Sohan_Core_Model_App
 
     private function splitURL()
     {
+        $alias = array('test' => 'news/news');
         $parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+        //Check for alias
+        foreach ($parts as $part) {
+
+        }
+        //Get namespace
+        $this->_namespace = !empty($parts[0]) ? ucfirst($parts[0]) : null;
         //Get module
-        $this->_module = !empty($parts[0]) ? ucfirst($parts[0]) : null;
+        $this->_module = !empty($parts[1]) ? ucfirst($parts[1]) : null;
         //Get controller
-        $this->_controller = !empty($parts[1]) ? $this->_module . '_Controller_' . ucfirst($parts[1]) . 'Controller' : 'Sohan_Core_Model_IndexController';
+        $this->_controller = !empty($parts[2]) ? $this->_namespace . '_' . $this->_module . '_Controller_' . ucfirst($parts[2]) . 'Controller' : 'Sohan_Core_Model_IndexController';
         //Get action
-        $this->_method = !empty($parts[2]) ? $parts[2] . 'Action' : 'indexAction';
+        $this->_method = !empty($parts[3]) ? $parts[3] . 'Action' : 'indexAction';
         //Get parameters
-        if (isset($parts[3])) {
+        if (isset($parts[4])) {
             $keys = $values = array();
-            for ($i = 3; $i < count($parts); $i++) {
+            for ($i = 4; $i < count($parts); $i++) {
                 if ($i % 2 == 0) {
                     $values[] = $parts[$i];
                 } else {

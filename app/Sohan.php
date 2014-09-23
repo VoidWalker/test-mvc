@@ -7,6 +7,8 @@ require 'app' . DS . 'autoload.php';
 
 final class Sohan
 {
+    private static $_alias;
+
     private static $_registry;
 
     private static $_app;
@@ -55,7 +57,11 @@ final class Sohan
 
     public static function getModel($alias)
     {
+        self::getAliases();
         list($module, $modelName) = explode('/', $alias);
+        if (isset(self::$_alias[$module])) {
+            $module = self::$_alias[$module];
+        }
         $className = ucfirst($module) . '_Model_' . ucfirst($modelName) . 'Model';
 
         return new $className();
@@ -72,6 +78,11 @@ final class Sohan
     public static function getConfigByPath($path)
     {
         return self::app()->config()->getConfigByPath($path);
+    }
+
+    public static function getAliases()
+    {
+        self::$_alias = self::app()->config()->getConfigByPath('Alias');
     }
 
     public static function app()

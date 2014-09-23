@@ -11,11 +11,14 @@ class Sohan_Core_Model_Config
 
     public function getConfigByPath($path)
     {
-        list($section, $parameter) = explode('/', $path);
-        if (!isset($this->_configuration[$section][$parameter])) {
+        $elements = explode('/', $path);
+        /*if (!isset($this->_configuration[$section][$parameter])) {
             throw new Exception('No such parameter.');
+        }*/
+        if (!isset($elements[1])) {
+            return $this->_configuration[$elements[0]];
         }
 
-        return $this->_configuration[$section][$parameter];
+        return $this->_configuration[$elements[0]][$elements[1]];
     }
 }
