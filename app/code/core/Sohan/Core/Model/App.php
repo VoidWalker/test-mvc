@@ -23,18 +23,18 @@ class Sohan_Core_Model_App
 
     private function splitURL()
     {
-        $alias = array('test' => 'news/news');
+        //$alias = array('test' => 'news/news');
         $parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
         //Check for alias
-        foreach ($parts as $part) {
+        //foreach ($parts as $part) {
 
-        }
+        //}
         //Get namespace
         $this->_namespace = !empty($parts[0]) ? ucfirst($parts[0]) : null;
         //Get module
         $this->_module = !empty($parts[1]) ? ucfirst($parts[1]) : null;
         //Get controller
-        $this->_controller = !empty($parts[2]) ? $this->_namespace . '_' . $this->_module . '_Controller_' . ucfirst($parts[2]) . 'Controller' : 'Sohan_Core_Model_IndexController';
+        $this->_controller = !empty($parts[2]) ? $this->_namespace . '_' . $this->_module . '_Controller_' . ucfirst($parts[2]) . 'Controller' : 'Sohan_Core_Controller_IndexController';
         //Get action
         $this->_method = !empty($parts[3]) ? $parts[3] . 'Action' : 'indexAction';
         //Get parameters
@@ -84,4 +84,4 @@ class Sohan_Core_Model_App
     {
         return $this->_config;
     }
-} 
+}
