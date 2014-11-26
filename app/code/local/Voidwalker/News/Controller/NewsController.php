@@ -10,7 +10,8 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IC
     public function getAction()
     {
         //$newsModel = Sohan::getFactory('Voidwalker_News_Model_NewsModel');
-        $newsModel = Sohan::getModel('vn/news');
+        $newsModel = Sohan::getModel('vn-news');
+        //$newsModel = Sohan::getModel('Voidwalker_News_Model_NewsModel');
         $newsModel->init();
         $newsModel->setTableName('news');
         //$model = new News_Model_NewsModel('test', 'testik');

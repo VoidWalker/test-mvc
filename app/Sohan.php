@@ -55,14 +55,17 @@ final class Sohan
         return self::registry($className);
     }
 
-    public static function getModel($alias)
+    public static function getModel($className)
     {
-        self::getAliases();
-        list($module, $modelName) = explode('/', $alias);
-        if (isset(self::$_alias[$module])) {
+        if (strpos($className, '-') !== false) {
+            self::getAliases();
+            list($module, $modelName) = explode('-', $className);
+            if (!isset(self::$_alias[$module])) {
+                throw new Exception('Alias does not exist!');
+            }
             $module = self::$_alias[$module];
+            $className = ucfirst($module) . '_Model_' . ucfirst($modelName) . 'Model';
         }
-        $className = ucfirst($module) . '_Model_' . ucfirst($modelName) . 'Model';
 
         return new $className();
     }
@@ -82,7 +85,7 @@ final class Sohan
 
     public static function getAliases()
     {
-        self::$_alias = self::app()->config()->getConfigByPath('Alias');
+        self::$_alias = self::getConfigByPath('Alias');
     }
 
     public static function app()
