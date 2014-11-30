@@ -7,12 +7,15 @@ class Sohan_Core_Model_Config
     public function __construct()
     {
         $this->_configuration = parse_ini_file('app' . DS . 'config' . DS . 'config.ini', true);
-        $dirrectories = glob('app' . DS . 'code' . DS . 'local' . DS . '*' . DS . '*' . DS . 'config' . DS . 'config.ini');
-        foreach ( $dirrectories as $directory ) {
+        $modules_config_path = glob('app' . DS . 'code' . DS . 'local' . DS . '*' . DS . '*' . DS . 'config' . DS . 'config.ini');
+        foreach ( $modules_config_path as $directory ) {
             $temp_config = parse_ini_file($directory, true);
             foreach ($temp_config as $section_name => $variables) {
                 foreach ($variables as $variable => $value) {
-                    $this->_configuration[$section_name][$variable] = $value;
+                    if(!isset($this->_configuration[$section_name][$variable]))
+                        $this->_configuration[$section_name][$variable] = $value;
+                    else
+                        throw new Exception("Duplicated config variable ($variable) in section ($section_name) from directory ($directory) !");
                 }
             }
         }
