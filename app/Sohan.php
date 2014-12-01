@@ -85,7 +85,7 @@ final class Sohan
 
     public static function getAliases()
     {
-        self::$_alias = self::getConfigByPath('Alias');
+        self::$_alias = self::getConfigByPath('alias');
     }
 
     public static function app()
