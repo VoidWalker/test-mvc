@@ -21,4 +21,12 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IC
 
         require_once 'app/code/local/Voidwalker/News/View/list.php';
     }
+
+    public function setAction()
+    {
+        $newsModel = Sohan::getModel('vn-news');
+        $newsModel->init();
+        $newsModel->setTableName('news');
+        $newsModel->insertRowInTable(array('title', 'content'), array('News4', 'New ACDC album'));
+    }
 }

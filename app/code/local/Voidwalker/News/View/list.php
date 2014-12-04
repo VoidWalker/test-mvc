@@ -7,11 +7,11 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($news as $newOne) { ?>
+    <?php foreach ($news as $piceOfNews) { ?>
         <tr>
-            <td><?php if (isset($newOne->id)) echo $newOne->id; ?></td>
-            <td><?php if (isset($newOne->title)) echo $newOne->title; ?></td>
-            <td><?php if (isset($newOne->content)) echo $newOne->content; ?></td>
+            <td><?php if (isset($piceOfNews->id)) echo $piceOfNews->id; ?></td>
+            <td><?php if (isset($piceOfNews->title)) echo $piceOfNews->title; ?></td>
+            <td><?php if (isset($piceOfNews->content)) echo $piceOfNews->content; ?></td>
         </tr>
     <?php } ?>
     </tbody>

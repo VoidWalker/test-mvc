@@ -8,7 +8,7 @@ class Object
     {
         $num_args = func_num_args();
         $args = func_get_args();
-        print_r($args);
+        //print_r($args);
         if ($num_args == 1) {
             if (!is_array($args[0])) {
                 throw new Exception("Argument must be array or pair of strings.");

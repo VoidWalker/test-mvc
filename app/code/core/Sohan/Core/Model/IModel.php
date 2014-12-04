@@ -69,4 +69,22 @@ abstract class Sohan_Core_Model_IModel extends Object
             echo '<br>' . $e->getMessage();
         }
     }
+
+    public function insertRowInTable(array $fields, array $values)
+    {
+        $joinedFields = implode(', ', $fields);
+        $inputes = array();
+        foreach ($values as $value) {
+            $inputes[] = $this->_db->quote($value);
+        }
+        $joinedInputes = implode(', ', $inputes);
+        try {
+            $table = strip_tags($this->getData('table_name'));
+            $sql = "INSERT INTO $table($joinedFields)
+					VALUES($joinedInputes)";
+            $this->_db->exec($sql);
+        } catch (PDOException $e) {
+            echo '<br>' . $e->getMessage();
+        }
+    }
 }
