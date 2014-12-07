@@ -2,6 +2,8 @@
 
 class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IController
 {
+    private $_news;
+
     public function indexAction()
     {
         echo '</br>Index Action of News Controller';
@@ -17,9 +19,8 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IC
         //$model = new News_Model_NewsModel('test', 'testik');
         //echo "<br>TEST: ".$model->getTest();
         //exit;
-        $news = $newsModel->getTableByName();
-
-        require_once 'app/code/local/Voidwalker/News/View/list.php';
+        $this->_news = $newsModel->getTableByName();
+        $this->includeView('list');
     }
 
     public function setAction()
@@ -27,6 +28,23 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IC
         $newsModel = Sohan::getModel('vn-news');
         $newsModel->init();
         $newsModel->setTableName('news');
-        $newsModel->insertRowInTable(array('title', 'content'), array('News4', 'New ACDC album'));
+        $newsModel->insertRowInTable(array('title', 'content'), array($_POST['title'], $_POST['content']));
+        header('Location: http://test-mvc.local/voidwalker/news/news/get');
+        //$this->getAction();
+    }
+
+    public function delAction()
+    {
+        $newsModel = Sohan::getModel('vn-news');
+        $newsModel->init();
+        $newsModel->setTableName('news');
+        $parameters = Sohan::app()->getParameters();
+        $newsModel->deleteRowByID($parameters['id']);
+        header('Location: http://test-mvc.local/voidwalker/news/news/get');
+    }
+
+    public function includeView($view)
+    {
+        return require 'app/code/local/Voidwalker/News/View/' . $view . '.php';
     }
 }

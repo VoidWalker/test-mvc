@@ -42,9 +42,9 @@ class Sohan_Core_Model_App
             $keys = $values = array();
             for ($i = 4; $i < count($parts); $i++) {
                 if ($i % 2 == 0) {
-                    $values[] = $parts[$i];
-                } else {
                     $keys[] = $parts[$i];
+                } else {
+                    $values[] = $parts[$i];
                 }
             }
             $this->_parameters = array_combine($keys, $values);
@@ -58,10 +58,10 @@ class Sohan_Core_Model_App
             if (method_exists($this->_controller, $this->_method)) {
                 $this->_controller->{$this->_method}();
             } else {
-                throw new Exception('Method does not exist!');
+                throw new Exception('Method ' . $this->_method . ' does not exist!');
             }
         } else {
-            throw new Exception('Controller does not exist!');
+            throw new Exception('Controller ' . $this->_controller . ' does not exist!');
         }
     }
 

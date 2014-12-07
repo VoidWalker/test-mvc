@@ -87,4 +87,18 @@ abstract class Sohan_Core_Model_IModel extends Object
             echo '<br>' . $e->getMessage();
         }
     }
+
+    public function deleteRowByID($id)
+    {
+        try {
+            $table = strip_tags($this->getData('table_name'));
+            $sql = "DELETE FROM $table
+                    WHERE id = :id";
+            $stmt = $this->_db->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo '<br>' . $e->getMessage();
+        }
+    }
 }
