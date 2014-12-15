@@ -68,6 +68,6 @@ class Object
 
     public function addData(array $data)
     {
-        $this->_data = array_merge($this->_data, $data);
+        $this->_data = array_replace($this->_data, $data);
     }
 }

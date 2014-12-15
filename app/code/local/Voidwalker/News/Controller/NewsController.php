@@ -4,6 +4,8 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IC
 {
     private $_news;
 
+    private $_model;
+
     public function indexAction()
     {
         echo '</br>Index Action of News Controller';
@@ -11,35 +13,29 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IC
 
     public function getAction()
     {
-        //$newsModel = Sohan::getFactory('Voidwalker_News_Model_NewsModel');
-        $newsModel = Sohan::getModel('vn-news');
-        //$newsModel = Sohan::getModel('Voidwalker_News_Model_NewsModel');
-        $newsModel->init();
-        $newsModel->setTableName('news');
-        //$model = new News_Model_NewsModel('test', 'testik');
-        //echo "<br>TEST: ".$model->getTest();
-        //exit;
-        $this->_news = $newsModel->getTableByName();
+        $this->_model = Sohan::getModel('vn-news');
+        $this->_model->init();
+        $this->_model->setTableName('news');
+        $this->_news = $this->_model->getTableByName();
         $this->includeView('list');
     }
 
-    public function setAction()
+    public function addAction()
     {
-        $newsModel = Sohan::getModel('vn-news');
-        $newsModel->init();
-        $newsModel->setTableName('news');
-        $newsModel->insertRowInTable(array('title', 'content'), array($_POST['title'], $_POST['content']));
+        $this->_model = Sohan::getModel('vn-news');
+        $this->_model->init();
+        $this->_model->setTableName('news');
+        $this->_model->insertRowInTable(array('title', 'content'), array(Request::getPost('title'), Request::getPost('content')));
         header('Location: http://test-mvc.local/voidwalker/news/news/get');
-        //$this->getAction();
     }
 
     public function delAction()
     {
-        $newsModel = Sohan::getModel('vn-news');
-        $newsModel->init();
-        $newsModel->setTableName('news');
+        $this->_model = Sohan::getModel('vn-news');
+        $this->_model->init();
+        $this->_model->setTableName('news');
         $parameters = Sohan::app()->getParameters();
-        $newsModel->deleteRowByID($parameters['id']);
+        $this->_model->deleteRowByID($parameters['id']);
         header('Location: http://test-mvc.local/voidwalker/news/news/get');
     }
 

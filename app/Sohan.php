@@ -1,5 +1,4 @@
 <?php
-
 define('BP', getcwd());
 define('DS', DIRECTORY_SEPARATOR);
 
@@ -58,12 +57,10 @@ final class Sohan
     public static function getModel($className)
     {
         if (strpos($className, '-') !== false) {
-            self::getAliases();
             list($module, $modelName) = explode('-', $className);
-            if (!isset(self::$_alias[$module])) {
+            if (!$module = self::getConfigByPath('alias/' . $module)) {
                 throw new Exception('Alias does not exist!');
             }
-            $module = self::$_alias[$module];
             $className = ucfirst($module) . '_Model_' . ucfirst($modelName) . 'Model';
         }
 
@@ -81,11 +78,6 @@ final class Sohan
     public static function getConfigByPath($path)
     {
         return self::app()->config()->getConfigByPath($path);
-    }
-
-    public static function getAliases()
-    {
-        self::$_alias = self::getConfigByPath('alias');
     }
 
     public static function app()

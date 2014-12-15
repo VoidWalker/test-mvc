@@ -1,5 +1,4 @@
 <?php
-
 spl_autoload_register(null, false);
 
 spl_autoload_extensions('.php');

@@ -16,7 +16,7 @@ class Sohan_Core_Model_App
 
     public function init()
     {
-        $this->_config = new Sohan_Core_Model_Config();
+        $this->_config = Sohan_Core_Model_Config::getInstance();
         $this->splitURL();
         $this->route();
     }
@@ -25,10 +25,6 @@ class Sohan_Core_Model_App
     {
         //$alias = array('test' => 'news/news');
         $parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        //Check for alias
-        //foreach ($parts as $part) {
-
-        //}
         //Get namespace
         $this->_namespace = !empty($parts[0]) ? ucfirst($parts[0]) : null;
         //Get module
@@ -59,10 +55,20 @@ class Sohan_Core_Model_App
                 $this->_controller->{$this->_method}();
             } else {
                 throw new Exception('Method ' . $this->_method . ' does not exist!');
+                //self::ErrorPage404();
             }
         } else {
             throw new Exception('Controller ' . $this->_controller . ' does not exist!');
+            //self::ErrorPage404();
         }
+    }
+
+    public static function ErrorPage404()
+    {
+        $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+        header('HTTP/1.1 404 Not Found');
+        header("Status: 404 Not Found");
+        header('Location:' . $host . 'noroute');
     }
 
     public function getController()

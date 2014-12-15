@@ -4,6 +4,6 @@ class Sohan_Core_Controller_IndexController extends Sohan_Core_Controller_IContr
 {
     public function indexAction()
     {
-        echo '</br>Index Action of Index Controller';
+        //echo '</br>Index Action of Index Controller';
     }
 }

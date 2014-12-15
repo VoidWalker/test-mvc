@@ -19,8 +19,8 @@
     </tbody>
 </table>
 <!-- Input form -->
-<form action="/voidwalker/news/news/set" method="post">
-    <input type="text" name="title" />
-    <input type="text" name="content" />
-    <input type="submit" value="Save" />
+<form action="/voidwalker/news/news/add" method="post">
+    <input type="text" name="title"/>
+    <input type="text" name="content"/>
+    <input type="submit" value="Save"/>
 </form>
