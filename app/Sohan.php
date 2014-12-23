@@ -56,23 +56,23 @@ final class Sohan
 
     public static function getModel($className)
     {
-        if (strpos($className, '-') !== false) {
-            list($module, $modelName) = explode('-', $className);
-            if (!$module = self::getConfigByPath('alias/' . $module)) {
-                throw new Exception('Alias does not exist!');
-            }
-            $className = ucfirst($module) . '_Model_' . ucfirst($modelName) . 'Model';
-        }
+        $className = self::getClassByName($className, 'model');
 
         return new $className();
     }
 
-    public static function getHelper()
+    public static function getHelper($className)
     {
+        $className = self::getClassByName($className, 'helper');
+
+        return new $className();
     }
 
-    public static function getController()
+    public static function getController($className)
     {
+        $className = self::getClassByName($className, 'view');
+
+        return new $className();
     }
 
     public static function getConfigByPath($path)
@@ -83,5 +83,24 @@ final class Sohan
     public static function app()
     {
         return self::$_app;
+    }
+
+    /**
+     * @param string $className
+     * @param string $objectType
+     * @return string
+     * @throws Exception
+     */
+    protected static function getClassByName($className, $objectType)
+    {
+        if (strpos($className, '-') !== false) {
+            list($module, $modelName) = explode('-', $className);
+            if (!$module = self::getConfigByPath('alias/' . $module)) {
+                throw new Exception('Alias does not exist!');
+            }
+            $className = ucfirst($module) . '_' . ucfirst($objectType) . '_' . ucfirst($modelName) . ucfirst($objectType);
+            return $className;
+        }
+        return $className;
     }
 }
