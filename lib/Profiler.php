@@ -5,6 +5,8 @@ class Profiler
     private static $_startTime;
 
     private static $_timerName;
+    
+    private static $_measures = array();
 
     public static function startMeasure($timerName)
     {
@@ -14,7 +16,14 @@ class Profiler
 
     public static function endMeasure()
     {
-        echo self::$_timerName . ' lasted: ' . (microtime(true) - self::$_startTime) . ' microseconds.';
+        self::$_measures[self::$_timerName] = microtime(true) - self::$_startTime;
+    }
+    
+    public static function renderResult()
+    {
+        foreach (self::$_measures as $name => $time) {
+            echo "<p>Timer $name lasted <b>$time</b> microseconds.</p>";
+        }
     }
 
 } 
