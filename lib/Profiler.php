@@ -1,22 +1,17 @@
 <?php
 
 class Profiler
-{
-    private static $_startTime;
-
-    private static $_timerName;
-    
+{  
     private static $_measures = array();
 
     public static function startMeasure($timerName)
     {
-        self::$_timerName = $timerName;
-        self::$_startTime = microtime(true);
+        self::$_measures[$timerName] = microtime(true);
     }
 
-    public static function endMeasure()
+    public static function endMeasure($timerName)
     {
-        self::$_measures[self::$_timerName] = microtime(true) - self::$_startTime;
+        self::$_measures[$timerName] = microtime(true) - self::$_measures[$timerName];
     }
     
     public static function renderResult()
