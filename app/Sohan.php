@@ -54,25 +54,34 @@ final class Sohan
         return self::registry($className);
     }
 
-    public static function getModel($className)
+    public static function getModel($class)
     {
-        $className = self::getClassByName($className, 'model');
-
-        return new $className();
+        $className = self::getClassByName($class, 'model');
+        if (self::registry($className) !== null) {
+            return self::registry($className);
+        } else {
+            return new $className();
+        }
     }
 
-    public static function getHelper($className)
+    public static function getHelper($class)
     {
-        $className = self::getClassByName($className, 'helper');
-
-        return new $className();
+        $className = self::getClassByName($class, 'helper');
+        if (self::registry($className) !== null) {
+            return self::registry($className);
+        } else {
+            return new $className();
+        }
     }
 
-    public static function getController($className)
+    public static function getController($class)
     {
-        $className = self::getClassByName($className, 'view');
-
-        return new $className();
+        $className = self::getClassByName($class, 'view');
+        if (self::registry($className) !== null) {
+            return self::registry($className);
+        } else {
+            return new $className();
+        }
     }
 
     public static function getConfigByPath($path)

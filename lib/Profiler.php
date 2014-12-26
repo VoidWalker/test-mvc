@@ -6,18 +6,19 @@ class Profiler
 
     public static function startMeasure($timerName)
     {
-        self::$_measures[$timerName] = microtime(true);
+        self::$_measures[$timerName]['timer'] = microtime(true);
+        self::$_measures[$timerName]['counter']++;
     }
 
     public static function endMeasure($timerName)
     {
-        self::$_measures[$timerName] = microtime(true) - self::$_measures[$timerName];
+        self::$_measures[$timerName]['timer'] = microtime(true) - self::$_measures[$timerName]['timer'];
     }
     
     public static function renderResult()
     {
-        foreach (self::$_measures as $name => $time) {
-            echo "<p>Timer $name lasted <b>$time</b> microseconds.</p>";
+        foreach (self::$_measures as $name => $value) {
+            echo "<p>Timer $name lasted <b>{$value['timer']}</b> mcs/executed {$value['counter']} times.</p>";
         }
     }
 
