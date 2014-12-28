@@ -58,6 +58,6 @@ class Sohan_Core_Model_Config
                 $this->_configuration[$section_name][$variable] = $value;
             }
         }
-        Profiler::endMeasure();
+        Profiler::endMeasure('Array-replace');
     }
 }

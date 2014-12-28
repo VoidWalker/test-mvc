@@ -8,7 +8,7 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($this->_news as $piceOfNews) { ?>
+    <?php foreach ($this->table as $piceOfNews) { ?>
         <tr>
             <td><?php if (isset($piceOfNews->id)) echo $piceOfNews->id; ?></td>
             <td><?php if (isset($piceOfNews->title)) echo $piceOfNews->title; ?></td>
