@@ -8,14 +8,14 @@
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($this->table as $piceOfNews) { ?>
+    <?php foreach ($this->table as $piceOfNews): ?>
         <tr>
             <td><?php if (isset($piceOfNews->id)) echo $piceOfNews->id; ?></td>
             <td><?php if (isset($piceOfNews->title)) echo $piceOfNews->title; ?></td>
             <td><?php if (isset($piceOfNews->content)) echo $piceOfNews->content; ?></td>
             <td><a href="/voidwalker/news/news/del/id/<?php echo $piceOfNews->id; ?>">Delete</a></td>
         </tr>
-    <?php } ?>
+    <?php endforeach; ?>
     </tbody>
 </table>
 <!-- Input form -->

@@ -1,6 +1,6 @@
 <?php
 
-class Sohan_Core_View_IView
+abstract class Sohan_Core_View_IView
 {
     public $_storage = array();
     
