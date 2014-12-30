@@ -54,11 +54,11 @@ class Sohan_Core_Model_App
             if (method_exists($this->_controller, $this->_method)) {
                 $this->_controller->{$this->_method}();
             } else {
-                throw new Exception('Method ' . $this->_method . ' does not exist!');
+                throw new SohanException('Method ' . $this->_method . ' does not exist!');
                 //self::ErrorPage404();
             }
         } else {
-            throw new Exception('Controller ' . $this->_controller . ' does not exist!');
+            throw new SohanException('Controller ' . $this->_controller . ' does not exist!');
             //self::ErrorPage404();
         }
     }

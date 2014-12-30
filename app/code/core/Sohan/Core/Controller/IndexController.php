@@ -1,9 +1,9 @@
 <?php
 
-class Sohan_Core_Controller_IndexController extends Sohan_Core_Controller_IController
+/**
+ * Class Sohan_Core_Controller_IndexController
+ */
+class Sohan_Core_Controller_IndexController extends Sohan_Core_Controller_Base
 {
-    public function indexAction()
-    {
-        //echo '</br>Index Action of Index Controller';
-    }
+
 }

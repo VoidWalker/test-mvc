@@ -1,6 +1,15 @@
 <?php
 
+/**
+ * Class Sohan_Core_Controller_Base
+ */
 class Sohan_Core_Controller_Base
 {
-    public function indexAction();
+    /**
+     * Default action of controllers
+     */
+    public function indexAction()
+    {
+        echo '</br>Index Action of Controller';
+    }
 }

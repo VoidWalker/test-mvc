@@ -10,12 +10,21 @@ final class Sohan
 
     private static $_app;
 
+    /**
+     * Main entry point
+     */
     public static function run()
     {
         self::$_app = new Sohan_Core_Model_App();
         self::app()->init();
     }
 
+    /**
+     * Get class as singleton
+     *
+     * @param  string $className
+     * @return mixed
+     */
     public static function getSingleton($className)
     {
         if (self::registry($className) === null) {
@@ -25,21 +34,55 @@ final class Sohan
         return self::registry($className);
     }
 
+    /**
+     * Get clone of class if it is exists
+     *
+     * @param  string $className
+     * @return object
+     */
+    public static function getClone($className)
+    {
+        if (self::registry($className) === null) {
+            self::register($className, $obj = new $className());
+        } else {
+            $obj = clone self::registry($className);
+        }
+
+        return $obj;
+    }
+
+    /**
+     * @param $key
+     * @param $value
+     */
     public static function register($key, $value)
     {
         self::$_registry[$key] = $value;
     }
 
+    /**
+     * @param $key
+     * @return mixed
+     */
     public static function registry($key)
     {
         return self::$_registry[$key];
     }
 
+    /**
+     * @param $key
+     */
     public static function unregister($key)
     {
         unset(self::$_registry[$key]);
     }
 
+    /**
+     * Get class as factory
+     *
+     * @param $className
+     * @return mixed
+     */
     public static function getFactory($className)
     {
         if (self::registry($className) !== null) {
@@ -50,41 +93,51 @@ final class Sohan
         return self::registry($className);
     }
 
+    /**
+     * @param string $class - class alias
+     * @return mixed
+     */
     public static function getModel($class)
     {
-        $className = self::getClassByName($class, 'model');
-        if (self::registry($className) !== null) {
-            return self::registry($className);
-        } else {
-            return new $className();
-        }
+        $className = self::getClassByAlias($class, 'model');
+
+        return self::getClone($className);
     }
 
+    /**
+     * @param string $class - class alias
+     * @return mixed
+     */
     public static function getHelper($class)
     {
-        $className = self::getClassByName($class, 'helper');
-        if (self::registry($className) !== null) {
-            return self::registry($className);
-        } else {
-            return new $className();
-        }
+        $className = self::getClassByAlias($class, 'helper');
+
+        return self::getClone($className);
     }
 
+    /**
+     * @param string $class - class alias
+     * @return mixed
+     */
     public static function getController($class)
     {
-        $className = self::getClassByName($class, 'view');
-        if (self::registry($className) !== null) {
-            return self::registry($className);
-        } else {
-            return new $className();
-        }
+        $className = self::getClassByAlias($class, 'view');
+
+        return self::getClone($className);
     }
 
+    /**
+     * @param $path
+     * @return mixed
+     */
     public static function getConfigByPath($path)
     {
         return self::app()->config()->getConfigByPath($path);
     }
 
+    /**
+     * @return mixed
+     */
     public static function app()
     {
         return self::$_app;
@@ -93,19 +146,16 @@ final class Sohan
     /**
      * @param string $className
      * @param string $objectType
-     * @return string
+     * @return string Transformed alias to proper class name
      * @throws Exception
      */
-    protected static function getClassByName($className, $objectType)
+    protected static function getClassByAlias($className, $objectType)
     {
-        if (strpos($className, '-') !== false) {
-            list($module, $modelName) = explode('-', $className);
-            if (!$module = self::getConfigByPath('alias/' . $module)) {
-                throw new Exception('Alias does not exist!');
-            }
-            $className = ucfirst($module) . '_' . ucfirst($objectType) . '_' . ucfirst($modelName) . ucfirst($objectType);
+        list($module, $modelName) = explode('-', $className);
+        if (!$module = self::getConfigByPath('alias/' . $module)) {
+            throw new SohanException('Alias does not exist!');
         }
-        
-        return $className;
+
+        return ucfirst($module) . '_' . ucfirst($objectType) . '_' . ucfirst($modelName) . ucfirst($objectType);
     }
 }

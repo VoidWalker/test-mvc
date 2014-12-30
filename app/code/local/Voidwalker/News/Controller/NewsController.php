@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Voidwalker_News_Controller_NewsController
+ */
 class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Base
 {
     private $_view;
@@ -10,6 +13,7 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
     {
         echo '</br>Index Action of News Controller';
     }
+
 
     public function getAction()
     {
