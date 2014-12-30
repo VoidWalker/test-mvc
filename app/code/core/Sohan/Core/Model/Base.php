@@ -1,6 +1,6 @@
 <?php
 
-abstract class Sohan_Core_Model_IModel extends Object
+abstract class Sohan_Core_Model_Base extends Object
 {
     const DB_NAME = 'data/news.db';
     private $_db;

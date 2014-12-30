@@ -6,13 +6,9 @@ require 'app' . DS . 'autoload.php';
 
 final class Sohan
 {
-    private static $_alias;
-
     private static $_registry;
 
     private static $_app;
-
-    private static $_config;
 
     public static function run()
     {
@@ -108,8 +104,8 @@ final class Sohan
                 throw new Exception('Alias does not exist!');
             }
             $className = ucfirst($module) . '_' . ucfirst($objectType) . '_' . ucfirst($modelName) . ucfirst($objectType);
-            return $className;
         }
+        
         return $className;
     }
 }

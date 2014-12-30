@@ -1,6 +1,6 @@
 <?php
 
-class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_IController
+class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Base
 {
     private $_view;
 

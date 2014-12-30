@@ -24,5 +24,4 @@ class Profiler
             echo "<p>Timer $name lasted <b>{$value['timer']}</b> mcs/executed {$value['counter']} times.</p>";
         }
     }
-
 } 
