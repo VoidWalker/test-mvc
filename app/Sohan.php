@@ -94,36 +94,30 @@ final class Sohan
     }
 
     /**
-     * @param string $class - class alias
+     * @param string $alias - class alias
      * @return mixed
      */
-    public static function getModel($class)
+    public static function getModel($alias)
     {
-        $className = self::getClassByAlias($class, 'model');
-
-        return self::getClone($className);
+        return self::getClone(self::getClassByAlias($alias, 'model'));
     }
 
     /**
-     * @param string $class - class alias
+     * @param string $alias - class alias
      * @return mixed
      */
-    public static function getHelper($class)
+    public static function getHelper($alias)
     {
-        $className = self::getClassByAlias($class, 'helper');
-
-        return self::getClone($className);
+        return self::getClone(self::getClassByAlias($alias, 'helper'));
     }
 
     /**
-     * @param string $class - class alias
+     * @param string $alias - class alias
      * @return mixed
      */
-    public static function getController($class)
+    public static function getController($alias)
     {
-        $className = self::getClassByAlias($class, 'view');
-
-        return self::getClone($className);
+        return self::getClone(self::getClassByAlias($alias, 'view'));
     }
 
     /**
