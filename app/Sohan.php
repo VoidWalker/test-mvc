@@ -99,7 +99,7 @@ final class Sohan
      */
     public static function getModel($alias)
     {
-        return self::getClone(self::getClassByAlias($alias, 'model'));
+        return self::getSingleton(self::getClassByAlias($alias, 'model'));
     }
 
     /**

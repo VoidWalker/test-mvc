@@ -15,13 +15,14 @@ class Profiler
 
     public static function endMeasure($timerName)
     {
-        self::$_measures[$timerName]['time'] = microtime(true) - self::$_measures[$timerName]['timer'];
+        self::$_measures[$timerName]['time'] = microtime(true) - self::$_measures[$timerName]['time'];
     }
 
     public static function renderResult()
     {
         foreach (self::$_measures as $name => $value) {
             echo "<p>Timer $name lasted <b>{$value['time']}</b> mcs/executed {$value['counter']} times.</p>";
+            echo "<p>Full time of $name lasted <b>" . $value['time'] * $value['counter'] . " times.</p>";
         }
     }
 } 

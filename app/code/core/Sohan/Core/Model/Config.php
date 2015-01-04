@@ -30,7 +30,6 @@ class Sohan_Core_Model_Config
         $this->_configuration = parse_ini_file('app' . DS . 'config' . DS . 'config.ini', true);
         $modules_config_path = glob('app' . DS . 'code' . DS . 'local' . DS . '*' . DS . '*' . DS . 'etc' . DS . 'config.ini');
 
-        Profiler::startMeasure('Array-replace');
         /*
         foreach ($modules_config_path as $directory) {
             $this->_configuration = array_replace_recursive($this->_configuration, parse_ini_file($directory, true));
@@ -58,6 +57,5 @@ class Sohan_Core_Model_Config
                 $this->_configuration[$section_name][$variable] = $value;
             }
         }
-        Profiler::endMeasure('Array-replace');
     }
 }

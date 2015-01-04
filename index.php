@@ -7,4 +7,5 @@ require_once 'app' . DIRECTORY_SEPARATOR . 'Sohan.php';
 Sohan::run();
 
 //phpinfo();
+Profiler::renderResult();
 ?>

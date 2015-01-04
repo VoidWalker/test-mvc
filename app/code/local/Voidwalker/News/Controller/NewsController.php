@@ -14,6 +14,14 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
         echo '</br>Index Action of News Controller';
     }
 
+    public function testAction()
+    {
+        for ($i = 0; $i < 100; $i++) {
+            Profiler::startMeasure('Cloned_model');
+            $this->_model = Sohan::getModel('vn-news');
+        }
+        Profiler::endMeasure('Cloned_model');
+    }
 
     public function getAction()
     {
