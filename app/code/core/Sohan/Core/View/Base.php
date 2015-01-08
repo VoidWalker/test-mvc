@@ -1,6 +1,6 @@
 <?php
 
-class Sohan_Core_View_Base
+class Sohan_Core_View_Base extends Object
 {
     public $_storage = array();
 

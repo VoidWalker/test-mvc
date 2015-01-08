@@ -58,7 +58,7 @@ abstract class Sohan_Core_Model_Base extends Object
         }
     }
 
-    public function getTableByName()
+    public function getTable()
     {
         try {
             $table = strip_tags($this->getData('table_name'));
