@@ -2,24 +2,6 @@
 
 abstract class Sohan_Core_Model_Base extends Object
 {
-    const DB_NAME = 'data/news.db';
-    private $_db;
-
-    public function init()
-    {
-        $this->openDatabaseConnection();
-    }
-
-    private function openDatabaseConnection()
-    {
-        $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING);
-        try {
-            $this->_db = new PDO(Sohan::getConfigByPath('DB/DB_TYPE') . ':host=' . Sohan::getConfigByPath('DB/DB_HOST') . ';dbname=' . Sohan::getConfigByPath('DB/DB_NAME'), Sohan::getConfigByPath('DB/DB_USER'), Sohan::getConfigByPath('DB/DB_PASS'), $options);
-        } catch (PDOException $e) {
-            echo '<br>' . $e->getMessage();
-        }
-    }
-
     private function dbCreation()
     {
         try {
@@ -63,7 +45,7 @@ abstract class Sohan_Core_Model_Base extends Object
         try {
             $table = strip_tags($this->getData('table_name'));
             $sql = "SELECT * FROM $table";
-            $result = $this->_db->query($sql);
+            $result = Sohan::app()->DBInstance()->DB()->query($sql);
             return $result->fetchAll();
         } catch (PDOException $e) {
             echo '<br>' . $e->getMessage();

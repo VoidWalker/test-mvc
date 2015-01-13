@@ -2,7 +2,8 @@
 
 class Sohan_Core_Model_Config
 {
-    static private $_instance = null;
+    private static $_instance = null;
+
     private $_configuration = array();
 
     private function __construct()
@@ -10,7 +11,7 @@ class Sohan_Core_Model_Config
         $this->_parsConfigFiles();
     }
 
-    public static function getInstance()
+    public static function loadConfig()
     {
         if (self::$_instance == null) {
             self::$_instance = new Sohan_Core_Model_Config;

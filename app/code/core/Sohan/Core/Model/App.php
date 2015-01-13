@@ -14,9 +14,12 @@ class Sohan_Core_Model_App
 
     private $_config;
 
+    private $_db;
+
     public function init()
     {
-        $this->_config = Sohan_Core_Model_Config::getInstance();
+        $this->_config = Sohan_Core_Model_Config::loadConfig();
+        $this->_db = Sohan_Core_Model_DB::DBInit();
         $this->splitURL();
         $this->route();
     }
@@ -89,5 +92,10 @@ class Sohan_Core_Model_App
     public function config()
     {
         return $this->_config;
+    }
+
+    public function DBInstance()
+    {
+        return $this->_db;
     }
 }
