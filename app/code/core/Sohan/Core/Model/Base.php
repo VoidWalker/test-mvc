@@ -1,7 +1,18 @@
 <?php
 
+/**
+ * Contains basic methods for data processing
+ *
+ * Class Sohan_Core_Model_Base
+ */
 abstract class Sohan_Core_Model_Base extends Object
 {
+    private $_db;
+
+    /**
+     * Service method
+     * for DB creation
+     */
     private function dbCreation()
     {
         try {
@@ -40,18 +51,37 @@ abstract class Sohan_Core_Model_Base extends Object
         }
     }
 
+    /**
+     * Initialize DB on first call
+     */
+    public function __construct()
+    {
+        $this->_db = Sohan_Core_Model_DB::DBInit()->DB();
+        parent::__construct(func_get_args());
+    }
+
+    /**
+     * Get table from BD
+     * declared previously
+     *
+     * @return mixed
+     */
     public function getTable()
     {
         try {
             $table = strip_tags($this->getData('table_name'));
             $sql = "SELECT * FROM $table";
-            $result = Sohan::app()->DBInstance()->DB()->query($sql);
+            $result = $this->_db->query($sql);
             return $result->fetchAll();
         } catch (PDOException $e) {
             echo '<br>' . $e->getMessage();
         }
     }
 
+    /**
+     * @param array $fields
+     * @param array $values
+     */
     public function insertRowInTable(array $fields, array $values)
     {
         $joinedFields = implode(', ', $fields);

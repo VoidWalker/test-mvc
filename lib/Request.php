@@ -1,7 +1,18 @@
 <?php
 
+/**
+ * Wrap of default Post array
+ *
+ * Class Request
+ */
 class Request
 {
+    /**
+     * Return value from POST array by key
+     *
+     * @param $variable
+     * @return mixed
+     */
     public static function getPost($variable)
     {
         if (isset($_POST[$variable])) {
@@ -11,6 +22,12 @@ class Request
         }
     }
 
+    /**
+     * Return value from GET array by key
+     *
+     * @param $variable
+     * @return mixed
+     */
     public static function getGet($variable)
     {
         if (isset($_GET[$variable])) {

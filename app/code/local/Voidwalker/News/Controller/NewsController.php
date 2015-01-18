@@ -2,6 +2,8 @@
 
 /**
  * Class Voidwalker_News_Controller_NewsController
+ *
+ * All possible actions with news entity
  */
 class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Base
 {
@@ -9,6 +11,9 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
 
     private $_model;
 
+    /**
+     * Activated when action is not specified
+     */
     public function indexAction()
     {
         echo '</br>Index Action of News Controller';
@@ -23,9 +28,13 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
         Profiler::endMeasure('Cloned_model');
     }
 
+    /**
+     * Returns list of news
+     */
     public function getAction()
     {
-        $this->_model = Sohan::getModel('vn-news');
+        //$this->_model = Sohan::getModel('vn-news');
+        $this->_model = new Voidwalker_News_Model_NewsModel('key', 'value');
         $this->_model->setTableName('news');
         $this->_view = Sohan::getSingleton('Voidwalker_News_View_ListView');
         //$this->_view->table = $this->_model->getTable();
@@ -33,6 +42,9 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
         $this->_view->render('list.html');
     }
 
+    /**
+     * Performs adding a piece of news
+     */
     public function addAction()
     {
         $this->_model = Sohan::getModel('vn-news');
@@ -41,6 +53,9 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
         header('Location: http://test-mvc.local/voidwalker/news/news/get');
     }
 
+    /**
+     * Called for deleting news line
+     */
     public function delAction()
     {
         $this->_model = Sohan::getModel('vn-news');

@@ -1,9 +1,17 @@
 <?php
 
+/**
+ * Parent class with methods to provide comfort data saving
+ *
+ * Class Object
+ */
 class Object
 {
     protected $_data = array();
 
+    /**
+     * Can receive array or pair of values
+     */
     public function __construct()
     {
         $num_args = func_num_args();
@@ -19,6 +27,16 @@ class Object
         }
     }
 
+    /**
+     * Based on called method name,
+     * perform set,get,unset action or
+     * check for presence
+     *
+     * @param $name
+     * @param $arguments
+     * @return bool|null
+     * @throws Exception
+     */
     public function __call($name, $arguments)
     {
         $method = strtolower(substr($name, 0, 3)) . 'Data';
@@ -42,11 +60,23 @@ class Object
         }
     }
 
+    /**
+     * Set data to class storage
+     *
+     * @param $key
+     * @param $value
+     */
     public function setData($key, $value)
     {
         $this->_data[$key] = $value;
     }
 
+    /**
+     * Get value from storage by key
+     *
+     * @param $key
+     * @return null
+     */
     public function getData($key)
     {
         if (!isset($this->_data[$key])) {
@@ -56,16 +86,32 @@ class Object
         return $this->_data[$key];
     }
 
+    /**
+     * Check data presence by key
+     *
+     * @param $key
+     * @return bool
+     */
     public function hasData($key)
     {
         return isset($this->_data[$key]);
     }
 
+    /**
+     * Unset data by key
+     *
+     * @param $key
+     */
     public function unsData($key)
     {
         unset($this->_data[$key]);
     }
 
+    /**
+     * Add array to storage
+     *
+     * @param array $data
+     */
     public function addData(array $data)
     {
         $this->_data = array_replace($this->_data, $data);

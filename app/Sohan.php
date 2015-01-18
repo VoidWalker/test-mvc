@@ -25,7 +25,7 @@ final class Sohan
      * @param  string $className
      * @return mixed
      */
-    public static function getSingleton($className)
+    public static function getSingleton($className, $parameters = null)
     {
         if (self::registry($className) === null) {
             self::register($className, new $className());

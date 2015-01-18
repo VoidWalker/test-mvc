@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Main application class
+ *
+ * Class Sohan_Core_Model_App
+ */
 class Sohan_Core_Model_App
 {
     private $_namespace = null;
@@ -16,14 +21,22 @@ class Sohan_Core_Model_App
 
     private $_db;
 
+    /**
+     * Start point of application
+     * Load config, initialize DB, processes URL
+     */
     public function init()
     {
         $this->_config = Sohan_Core_Model_Config::loadConfig();
-        $this->_db = Sohan_Core_Model_DB::DBInit();
+        Sohan_Core_Model_DB::DBInit();
         $this->splitURL();
         $this->route();
     }
 
+    /**
+     * Pars the URL to extract information about
+     * namespace, module, controller, action, parameters
+     */
     private function splitURL()
     {
         //$alias = array('test' => 'news/news');
@@ -50,6 +63,11 @@ class Sohan_Core_Model_App
         }
     }
 
+    /**
+     * Call the action of requested controller
+     *
+     * @throws SohanException
+     */
     public function route()
     {
         if (class_exists($this->_controller)) {
@@ -66,6 +84,9 @@ class Sohan_Core_Model_App
         }
     }
 
+    /**
+     * Redirect to 404 page
+     */
     public static function ErrorPage404()
     {
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
@@ -74,28 +95,39 @@ class Sohan_Core_Model_App
         header('Location:' . $host . 'noroute');
     }
 
+    /**
+     * @return controller name
+     */
     public function getController()
     {
         return $this->_controller;
     }
 
+    /**
+     * @return action name
+     */
     public function getAction()
     {
         return $this->_method;
     }
 
+    /**
+     * Array of parameters
+     *
+     * @return array
+     */
     public function getParameters()
     {
         return $this->_parameters;
     }
 
+    /**
+     * Get config object
+     *
+     * @return mixed
+     */
     public function config()
     {
         return $this->_config;
-    }
-
-    public function DBInstance()
-    {
-        return $this->_db;
     }
 }
