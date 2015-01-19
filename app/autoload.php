@@ -3,6 +3,11 @@ spl_autoload_register(null, false);
 
 spl_autoload_extensions('.php');
 
+/**
+ * Auto include of requested classes
+ *
+ * @param $className
+ */
 function classLoader($className)
 {
     $codePull[] = implode(DS, array('app', 'code', 'local')) . DS;

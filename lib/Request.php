@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Wrap of default Post array
- *
  * Class Request
+ *
+ * Wrap of default Post array
  */
 class Request
 {

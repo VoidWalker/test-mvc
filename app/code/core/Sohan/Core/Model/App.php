@@ -19,8 +19,6 @@ class Sohan_Core_Model_App
 
     private $_config;
 
-    private $_db;
-
     /**
      * Start point of application
      * Load config, initialize DB, processes URL
@@ -39,17 +37,11 @@ class Sohan_Core_Model_App
      */
     private function splitURL()
     {
-        //$alias = array('test' => 'news/news');
         $parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        //Get namespace
         $this->_namespace = !empty($parts[0]) ? ucfirst($parts[0]) : null;
-        //Get module
         $this->_module = !empty($parts[1]) ? ucfirst($parts[1]) : null;
-        //Get controller
         $this->_controller = !empty($parts[2]) ? $this->_namespace . '_' . $this->_module . '_Controller_' . ucfirst($parts[2]) . 'Controller' : 'Sohan_Core_Controller_IndexController';
-        //Get action
         $this->_method = !empty($parts[3]) ? $parts[3] . 'Action' : 'indexAction';
-        //Get parameters
         if (isset($parts[4])) {
             $keys = $values = array();
             for ($i = 4; $i < count($parts); $i++) {

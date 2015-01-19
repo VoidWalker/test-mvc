@@ -4,6 +4,13 @@ define('DS', DIRECTORY_SEPARATOR);
 
 require 'app' . DS . 'autoload.php';
 
+/**
+ * Class Sohan
+ *
+ * Give access to class-call methods
+ * runs application
+ * store classes objects
+ */
 final class Sohan
 {
     private static $_registry;
@@ -23,12 +30,13 @@ final class Sohan
      * Get class as singleton
      *
      * @param  string $className
+     * @param array $parameter - set properties for class
      * @return mixed
      */
-    public static function getSingleton($className, $parameters = null)
+    public static function getSingleton($className, array $parameters = null)
     {
         if (self::registry($className) === null) {
-            self::register($className, new $className());
+            ($parameters === null) ? self::register($className, new $className()) : self::register($className, new $className($parameters));
         }
 
         return self::registry($className);
@@ -95,18 +103,22 @@ final class Sohan
 
     /**
      * @param string $alias - class alias
+     * @param array $parameters - set array of properties for model
      * @return mixed
      */
-    public static function getModel($alias)
+    public static function getModel($alias, array $parameters = null)
     {
-        return self::getSingleton(self::getClassByAlias($alias, 'model'));
+        $className = self::getClassByAlias($alias, 'model');
+
+        return ($parameters === null) ? self::getSingleton($className) : self::getSingleton($className, $parameters);
     }
 
     /**
      * @param string $alias - class alias
      * @return mixed
      */
-    public static function getHelper($alias)
+    public
+    static function getHelper($alias)
     {
         return self::getClone(self::getClassByAlias($alias, 'helper'));
     }

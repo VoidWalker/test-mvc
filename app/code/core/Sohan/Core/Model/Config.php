@@ -1,11 +1,19 @@
 <?php
 
+/**
+ * Class Sohan_Core_Model_Config
+ *
+ * Loads config from modules and merge it with base config file
+ */
 class Sohan_Core_Model_Config
 {
     private static $_instance = null;
 
     private $_configuration = array();
 
+    /**
+     * On class init call ini parser function
+     */
     private function __construct()
     {
         $this->_parsConfigFiles();
@@ -16,16 +24,26 @@ class Sohan_Core_Model_Config
         if (self::$_instance == null) {
             self::$_instance = new Sohan_Core_Model_Config;
         }
+
         return self::$_instance;
     }
 
+    /**
+     * Returns config variable by path "section/name"
+     *
+     * @param $path
+     * @return config element or false if not set
+     */
     public function getConfigByPath($path)
     {
         $elements = explode('/', $path);
 
-        return !isset($this->_configuration[$elements[0]][$elements[1]]) ? false : $this->_configuration[$elements[0]][$elements[1]];
+        return isset($this->_configuration[$elements[0]][$elements[1]]) ? $this->_configuration[$elements[0]][$elements[1]] : false;
     }
 
+    /**
+     * On class init pars *.ini files and merge them into one config array
+     */
     protected function _parsConfigFiles()
     {
         $this->_configuration = parse_ini_file('app' . DS . 'config' . DS . 'config.ini', true);
