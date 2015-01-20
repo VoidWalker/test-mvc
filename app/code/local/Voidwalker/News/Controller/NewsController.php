@@ -48,7 +48,7 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
     {
         $this->_model = Sohan::getModel('vn-news');
         $this->_model->setTableName('news');
-        $this->_model->insertRowInTable(array('title', 'content'), array(Request::getPost('title'), Request::getPost('content')));
+        $this->_model->insertRowInTable(array('title', 'content'), array(Sohan_Core_Request::getPost('title'), Sohan_Core_Request::getPost('content')));
         header('Location: http://test-mvc.local/voidwalker/news/news/get');
     }
 
@@ -59,7 +59,7 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
     {
         $this->_model = Sohan::getModel('vn-news');
         $this->_model->setTableName('news');
-        $parameters = Sohan::app()->getParameters();
+        $parameters = Sohan_Core_Request::getGet('parameters');
         $this->_model->deleteRowByID($parameters['id']);
         header('Location: http://test-mvc.local/voidwalker/news/news/get');
     }

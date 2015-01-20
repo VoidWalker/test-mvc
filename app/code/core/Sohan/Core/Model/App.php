@@ -25,34 +25,10 @@ class Sohan_Core_Model_App
      */
     public function init()
     {
-        $this->_config = Sohan_Core_Model_Config::loadConfig();
-        Sohan_Core_Model_DB::DBInit();
-        $this->splitURL();
-        $this->route();
-    }
-
-    /**
-     * Pars the URL to extract information about
-     * namespace, module, controller, action, parameters
-     */
-    private function splitURL()
-    {
-        $parts = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        $this->_namespace = !empty($parts[0]) ? ucfirst($parts[0]) : null;
-        $this->_module = !empty($parts[1]) ? ucfirst($parts[1]) : null;
-        $this->_controller = !empty($parts[2]) ? $this->_namespace . '_' . $this->_module . '_Controller_' . ucfirst($parts[2]) . 'Controller' : 'Sohan_Core_Controller_IndexController';
-        $this->_method = !empty($parts[3]) ? $parts[3] . 'Action' : 'indexAction';
-        if (isset($parts[4])) {
-            $keys = $values = array();
-            for ($i = 4; $i < count($parts); $i++) {
-                if ($i % 2 == 0) {
-                    $keys[] = $parts[$i];
-                } else {
-                    $values[] = $parts[$i];
-                }
-            }
-            $this->_parameters = array_combine($keys, $values);
-        }
+        $this->_config = Sohan_Core_Config::loadConfig();
+        Sohan_Core_DB::DBInit();
+        Sohan_Core_Request::URLparser();
+        $this->callAction();
     }
 
     /**
@@ -60,18 +36,20 @@ class Sohan_Core_Model_App
      *
      * @throws SohanException
      */
-    public function route()
+    public function callAction()
     {
-        if (class_exists($this->_controller)) {
-            $this->_controller = new $this->_controller();
-            if (method_exists($this->_controller, $this->_method)) {
-                $this->_controller->{$this->_method}();
+        $controller = Sohan_Core_Request::getGet('controller');
+        $method = Sohan_Core_Request::getGet('method');
+        if (class_exists($controller)) {
+            $controller = new $controller();
+            if (method_exists($controller, $method)) {
+                $controller->{$method}();
             } else {
-                throw new SohanException('Method ' . $this->_method . ' does not exist!');
+                throw new SohanException('Method ' . $method . ' does not exist!');
                 //self::ErrorPage404();
             }
         } else {
-            throw new SohanException('Controller ' . $this->_controller . ' does not exist!');
+            throw new SohanException('Controller ' . $controller . ' does not exist!');
             //self::ErrorPage404();
         }
     }

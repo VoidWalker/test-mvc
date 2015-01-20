@@ -56,7 +56,7 @@ abstract class Sohan_Core_Model_Base extends Object
      */
     public function __construct()
     {
-        $this->_db = Sohan_Core_Model_DB::DBInit()->DB();
+        $this->_db = Sohan_Core_DB::DBInit()->DB();
         if (func_num_args() == 1) {
             parent::__construct(func_get_arg(0));
         }

@@ -1,6 +1,11 @@
 <?php
 
-class Sohan_Core_Model_DB
+/**
+ * Class Sohan_Core_DB
+ *
+ *Cover of default PDO object with useful methods to save data
+ */
+class Sohan_Core_DB
 {
     const DB_NAME = 'data/news.db';
 
@@ -21,7 +26,7 @@ class Sohan_Core_Model_DB
     public static function DBInit()
     {
         if (self::$_instance == null) {
-            self::$_instance = new Sohan_Core_Model_DB();
+            self::$_instance = new Sohan_Core_DB();
         }
         return self::$_instance;
     }

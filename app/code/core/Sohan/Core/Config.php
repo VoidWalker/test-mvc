@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Class Sohan_Core_Model_Config
+ * Class Sohan_Core_Config
  *
  * Loads config from modules and merge it with base config file
  */
-class Sohan_Core_Model_Config
+class Sohan_Core_Config
 {
     private static $_instance = null;
 
@@ -19,10 +19,15 @@ class Sohan_Core_Model_Config
         $this->_parsConfigFiles();
     }
 
+    /**
+     * Realize singleton pattern
+     *
+     * @return null|Sohan_Core_Config
+     */
     public static function loadConfig()
     {
         if (self::$_instance == null) {
-            self::$_instance = new Sohan_Core_Model_Config;
+            self::$_instance = new Sohan_Core_Config;
         }
 
         return self::$_instance;
