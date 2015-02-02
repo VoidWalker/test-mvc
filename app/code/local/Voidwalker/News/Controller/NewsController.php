@@ -36,10 +36,11 @@ class Voidwalker_News_Controller_NewsController extends Sohan_Core_Controller_Ba
      */
     public function getAction()
     {
-        $this->_model = Sohan::getModel('vn-news', array('table_name' => 'news'));
+        $this->_model = Sohan::getModel('vn-news');
         $this->_view = Sohan::getSingleton('Voidwalker_News_View_ListView');
         //$this->_view->table = $this->_model->getTable();
-        $this->_view->setTable($this->_model->getTable());
+        $this->_model->fillCollection();
+        $this->_view->setTable($this->_model->getCollection());
         $this->_view->render('list.html');
     }
 

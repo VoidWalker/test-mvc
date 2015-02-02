@@ -68,13 +68,13 @@ abstract class Sohan_Core_Model_Base extends Object
      *
      * @return mixed
      */
-    public function getTable()
+    public function getTable($table_name)
     {
         try {
-            $table = strip_tags($this->getData('table_name'));
+            $table = strip_tags($table_name);
             $sql = "SELECT * FROM $table";
-            $result = $this->_db->query($sql);
-            return $result->fetchAll();
+            return $this->_db->query($sql);
+            //return $result->fetchAll();
         } catch (PDOException $e) {
             echo '<br>' . $e->getMessage();
         }

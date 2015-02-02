@@ -10,10 +10,10 @@
     <tbody>
     <?php foreach ($this->getTable() as $piceOfNews): ?>
         <tr>
-            <td><?php echo $piceOfNews->id; ?></td>
-            <td><?php echo $piceOfNews->title; ?></td>
-            <td><?php echo $piceOfNews->content; ?></td>
-            <td><a href="/voidwalker/news/news/del/id/<?php echo $piceOfNews->id; ?>">Delete</a></td>
+            <td><?php echo $piceOfNews->getId(); ?></td>
+            <td><?php echo $piceOfNews->getTitle(); ?></td>
+            <td><?php echo $piceOfNews->getContent(); ?></td>
+            <td><a href="/voidwalker/news/news/del/id/<?php echo $piceOfNews->getId(); ?>">Delete</a></td>
         </tr>
     <?php endforeach; ?>
     </tbody>
